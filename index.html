@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+    <title>Compter le nombre de chiffres</title>
+</head>
+<body>
+
+<h1>Compter le nombre de chiffres</h1>
+
+<p>Nombre: <input type="text" id="nombreInput"></p>
+<button onclick="compterChiffres()">Compter</button>
+
+<p id="resultat"></p>
+
+<script>
+function numOfDigits(nombre) {
+  return nombre.toString().length;
+}
+
+function compterChiffres() {
+  var inputElement = document.getElementById("nombreInput");
+  var nombre = parseInt(inputElement.value); // Convertir la valeur en nombre entier
+
+  if (!isNaN(nombre)) {
+    var resultatElement = document.getElementById("resultat");
+    var nombreDeChiffres = numOfDigits(nombre);
+    resultatElement.textContent = "Nombre de chiffres : " + nombreDeChiffres;
+  } else {
+    alert("Veuillez entrer un nombre entier valide.");
+  }
+}
+</script>
+
+</body>
+</html>
